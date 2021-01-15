@@ -1,0 +1,13 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+		  package="com.kotlin.mine">
+	<application>
+
+		<meta-data
+				android:name="com.kotlin.mine.core.GlobalConfiguration"
+				android:value="ConfigModule"/>
+
+		<activity android:name="com.kotlin.mine.mvvm.view.MineActivity"
+				  android:label="个人中心"
+				  android:screenOrientation="portrait"/>
+	</application>
+</manifest>
