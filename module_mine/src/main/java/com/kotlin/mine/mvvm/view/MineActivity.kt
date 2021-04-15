@@ -6,6 +6,7 @@ import com.fortunes.commonsdk.core.RouterConstants
 import com.fortunes.commonsdk.network.onHttpSubscribeNoToast
 import com.guoyang.recyclerviewbindingadapter.ItemClickPresenter
 import com.guoyang.recyclerviewbindingadapter.adapter.SingleTypeAdapter
+import com.gyf.barlibrary.ImmersionBar
 import com.kotlin.basemvvm.base.BaseActivity
 import com.kotlin.basemvvm.helper.extens.bindStatusOrLifeCycle
 import com.kotlin.basemvvm.helper.extens.toast
@@ -39,6 +40,9 @@ class MineActivity : BaseActivity<MineActivityMineBinding,MineViewModel>(), Refr
             this.refreshPresenter = this@MineActivity
             recyclerView.adapter = mAdapter
         }
+        ImmersionBar.with(this)
+                .transparentBar()
+                .init()
     }
 
     override fun onItemClick(v: View, position: Int, item: MineItemViewModel) {

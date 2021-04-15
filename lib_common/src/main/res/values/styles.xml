@@ -3,8 +3,11 @@
     <style name="public_AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/public_redText</item>
-        <item name="colorPrimaryDark">@color/public_pressedRedText</item>
+        <item name="colorPrimaryDark">@color/public_backgroundColor</item>
         <item name="colorAccent">@color/public_redText</item>
+<!--        <item name="colorPrimary">@color/public_redText</item>-->
+<!--        <item name="colorPrimaryDark">@color/public_pressedRedText</item>-->
+<!--        <item name="colorAccent">@color/public_redText</item>-->
         <item name="android:windowBackground">@color/public_backgroundColor</item>
     </style>
 
