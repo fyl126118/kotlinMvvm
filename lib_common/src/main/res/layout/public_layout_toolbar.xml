@@ -29,7 +29,7 @@
 		</RelativeLayout>
 		<TextView
 				android:textColor="#333333"
-				android:textSize="20sp"
+				android:textSize="18sp"
 				android:layout_centerInParent="true"
 				android:id="@+id/public_toolbar_title"
 				android:layout_width="wrap_content"

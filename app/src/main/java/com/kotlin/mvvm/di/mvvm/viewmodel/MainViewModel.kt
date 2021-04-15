@@ -25,6 +25,7 @@ class MainViewModel : BaseVMModel<MainModel>(){
             .doOnError {
                 Timber.d("doOnError")
             }
+
     }
 }
 

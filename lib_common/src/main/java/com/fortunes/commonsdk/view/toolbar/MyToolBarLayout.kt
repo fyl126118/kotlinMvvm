@@ -10,6 +10,7 @@ import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
 import com.fortunes.commonsdk.R
+import com.fortunes.commonsdk.binds.bindRefreshing
 
 /**
  * 通用的标题栏ToolBar
@@ -35,6 +36,7 @@ class MyToolBarLayout(context: Context, attrs: AttributeSet?) : LinearLayout(con
         toolRight = array.getString(R.styleable.public_toolbar_public_toolbar_tv_right)
         iconVisible = array.getBoolean(R.styleable.public_toolbar_public_toolbar_img, true)
         array.recycle()
+
         val view = LayoutInflater.from(context).inflate(R.layout.public_layout_toolbar, this, false)
         addView(view, 0)
         ivBack = view.findViewById(R.id.public_iv_back)
@@ -46,6 +48,7 @@ class MyToolBarLayout(context: Context, attrs: AttributeSet?) : LinearLayout(con
         rlBack.visibility = if (iconVisible) View.VISIBLE else View.GONE
         titleTv = view.findViewById(R.id.public_toolbar_title)
         titleTv.text = toolTitle
+        titleTv.textSize=16f
         tvRight.text = toolRight
 
     }

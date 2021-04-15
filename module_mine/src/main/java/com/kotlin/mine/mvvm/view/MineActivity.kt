@@ -48,6 +48,5 @@ class MineActivity : BaseActivity<MineActivityMineBinding,MineViewModel>(), Refr
     private fun loadVMData(isRefresh: Boolean) =
         mViewModel.getProjectList(isRefresh, 294)
             .bindStatusOrLifeCycle(isRefresh, viewModel = mViewModel, owner = this@MineActivity)
-            .onHttpSubscribeNoToast(this@MineActivity) {
-            }
+            .onHttpSubscribeNoToast(this@MineActivity)
 }

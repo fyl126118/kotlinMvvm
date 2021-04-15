@@ -36,7 +36,7 @@ import timber.log.Timber
  * Created by mou on 2018/9/11.
  */
 @RequiresApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
-class ActivityLifecycleCallbacksImpl : Application.ActivityLifecycleCallbacks {
+ class ActivityLifecycleCallbacksImpl : Application.ActivityLifecycleCallbacks {
     override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
         Timber.i("${activity.javaClass.simpleName} onActivityCreated")
         ImmersionBar.with(activity)
@@ -74,7 +74,7 @@ class ActivityLifecycleCallbacksImpl : Application.ActivityLifecycleCallbacks {
     override fun onActivityResumed(activity: Activity) {
     }
 
-    override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle?) {
+    override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {
     }
 
     override fun onActivityStopped(activity: Activity) {

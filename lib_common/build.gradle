@@ -80,9 +80,9 @@ dependencies {
     api rootProject.ext.dependencies["immersionbar"]
     api rootProject.ext.dependencies["RecyclerViewBindingAdapter"]
     api rootProject.ext.dependencies["PickerView"]
-    api(rootProject.ext.dependencies["PictureSelector"]) {
-        exclude module: 'glide'
-    }
+//    api(rootProject.ext.dependencies["PictureSelector"]) {
+//        exclude module: 'glide'
+//    }
     api(rootProject.ext.dependencies["lottie"]) {
         exclude module: 'support'
     }
