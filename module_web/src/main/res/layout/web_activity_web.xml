@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+	<data>
+
+		<variable
+				name="refreshPresenter"
+				type="com.kotlin.basemvvm.helper.listener.RefreshPresenter"/>
+
+		<variable
+				name="viewModel"
+				type="com.kotlin.mine.mvvm.viewmodel.WebViewModel"/>
+	</data>
+
+	<com.fortunes.commonsdk.view.toolbar.MyToolBarLayout
+			app:public_toolbar_title="WEB_VIEW"
+			android:orientation="vertical"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+
+		<com.fortunes.commonsdk.view.statusview.MultipleStatusView
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				bind:onError="@{refreshPresenter}"
+				bind:status="@{viewModel.pageState}">
+
+			<com.scwang.smart.refresh.layout.SmartRefreshLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					bind:onRefresh="@{refreshPresenter}"
+					bind:refreshing="@{viewModel.listState}">
+
+				<androidx.recyclerview.widget.RecyclerView
+						android:id="@+id/recyclerView"
+						android:orientation="vertical"
+						app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"/>
+
+				<com.scwang.smart.refresh.footer.ClassicsFooter
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					app:srlTextSizeTitle="16sp"
+					app:srlFinishDuration="500"
+					app:srlDrawableSize="20dp"
+					app:srlDrawableArrowSize="20dp"
+					app:srlDrawableProgressSize="20dp"
+					app:srlDrawableMarginRight="20dp"
+					app:srlClassicsSpinnerStyle="Translate"
+					app:srlTextPulling="@string/srl_footer_pulling"
+					app:srlTextRelease="@string/srl_footer_release"
+					app:srlTextLoading="@string/srl_footer_loading"
+					app:srlTextRefreshing="@string/srl_footer_refreshing"
+					app:srlTextFinish="@string/srl_footer_finish"
+					app:srlTextFailed="@string/srl_footer_failed"
+					app:srlTextNothing="我是你打野"/>
+			</com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+		</com.fortunes.commonsdk.view.statusview.MultipleStatusView>
+	</com.fortunes.commonsdk.view.toolbar.MyToolBarLayout>
+</layout>

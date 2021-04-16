@@ -34,5 +34,6 @@ dependencies {
     if (!isBuildModule.toBoolean()) {
         implementation project(':module_login')
         implementation project(':module_mine')
+        implementation project(':module_web')
     }
 }

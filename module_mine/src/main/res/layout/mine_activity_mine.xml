@@ -39,6 +39,24 @@
 						app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 						android:layout_width="match_parent"
 						android:layout_height="match_parent"/>
+
+				<com.scwang.smart.refresh.footer.ClassicsFooter
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					app:srlTextSizeTitle="16sp"
+					app:srlFinishDuration="500"
+					app:srlDrawableSize="20dp"
+					app:srlDrawableArrowSize="20dp"
+					app:srlDrawableProgressSize="20dp"
+					app:srlDrawableMarginRight="20dp"
+					app:srlClassicsSpinnerStyle="Translate"
+					app:srlTextPulling="@string/srl_footer_pulling"
+					app:srlTextRelease="@string/srl_footer_release"
+					app:srlTextLoading="@string/srl_footer_loading"
+					app:srlTextRefreshing="@string/srl_footer_refreshing"
+					app:srlTextFinish="@string/srl_footer_finish"
+					app:srlTextFailed="@string/srl_footer_failed"
+					app:srlTextNothing="我是你打野"/>
 			</com.scwang.smart.refresh.layout.SmartRefreshLayout>
 
 		</com.fortunes.commonsdk.view.statusview.MultipleStatusView>

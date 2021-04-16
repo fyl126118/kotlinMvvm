@@ -24,7 +24,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), Refresh
         mViewModel
                 .getArticle()
                 //  .bindDialogOrLifeCycle(this)
-                . bindStatusOrLifeCycle(isRefresh, viewModel = mViewModel, owner = this)
+                . bindStatusOrLifeCycle(isRefresh, viewModel = mViewModel, owner = this@MainActivity)
                 .onHttpSubscribeNoToast(this)
                 {
                     toast("成功"+it.errorMsg)

@@ -4,7 +4,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/public_redText</item>
         <item name="colorPrimaryDark">@color/public_backgroundColor</item>
-        <item name="colorAccent">@color/public_redText</item>
+        <item name="colorAccent">@color/public_yellowColor</item>
 <!--        <item name="colorPrimary">@color/public_redText</item>-->
 <!--        <item name="colorPrimaryDark">@color/public_pressedRedText</item>-->
 <!--        <item name="colorAccent">@color/public_redText</item>-->
