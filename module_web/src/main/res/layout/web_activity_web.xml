@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-		xmlns:app="http://schemas.android.com/apk/res-auto"
-		xmlns:android="http://schemas.android.com/apk/res/android"
-		xmlns:bind="http://schemas.android.com/apk/res-auto">
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:bind="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools">
 
 	<data>
 
@@ -12,7 +12,7 @@
 
 		<variable
 				name="viewModel"
-				type="com.kotlin.mine.mvvm.viewmodel.WebViewModel"/>
+				type="com.kotlin.web.mvvm.viewmodel.WebViewModel"/>
 	</data>
 
 	<com.fortunes.commonsdk.view.toolbar.MyToolBarLayout
@@ -20,8 +20,21 @@
 			android:orientation="vertical"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent">
-
+		<TextView
+			android:id="@+id/tv_pay"
+			android:layout_gravity="center"
+			android:layout_width="160dp"
+			android:layout_height="40dp"
+			android:layout_marginTop="5dp"
+			android:gravity="center"
+			android:text="付款"
+			android:textSize="13sp" />
+		<com.kotlin.web.mvvm.view.X5WebView
+			android:id="@+id/wv_load"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"/>
 		<com.fortunes.commonsdk.view.statusview.MultipleStatusView
+			android:visibility="gone"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
 				bind:onError="@{refreshPresenter}"

@@ -11,7 +11,7 @@
 
 		<variable
 				name="item"
-				type="com.kotlin.mine.mvvm.viewmodel.WebItemViewModel"/>
+				type="com.kotlin.web.mvvm.viewmodel.WebItemViewModel"/>
 
 		<variable
 				name="position"
