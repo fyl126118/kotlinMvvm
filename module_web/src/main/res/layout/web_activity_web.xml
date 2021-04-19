@@ -16,7 +16,7 @@
 	</data>
 
 	<com.fortunes.commonsdk.view.toolbar.MyToolBarLayout
-			app:public_toolbar_title="WEB_VIEW"
+		    android:id="@+id/wv_title"
 			android:orientation="vertical"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent">
@@ -29,6 +29,12 @@
 			android:gravity="center"
 			android:text="付款"
 			android:textSize="13sp" />
+		<ProgressBar
+			android:id="@+id/progressBar"
+			style="?android:attr/progressBarStyleHorizontal"
+			android:layout_width="match_parent"
+			android:layout_height="3dip"
+			android:visibility="gone" />
 		<com.kotlin.web.mvvm.view.X5WebView
 			android:id="@+id/wv_load"
 			android:layout_width="match_parent"

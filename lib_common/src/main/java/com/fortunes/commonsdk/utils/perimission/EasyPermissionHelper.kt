@@ -51,7 +51,7 @@ object EasyPermissionHelper {
                 PermissionConstants.CAMERA,
                 PermissionConstants.STORAGE, PermissionConstants.PHONE,
                 PermissionConstants.SMS, PermissionConstants.LOCATION,
-                PermissionConstants.MICROPHONE
+                PermissionConstants.MICROPHONE,PermissionConstants.CONTACTS
             )
         )
     }
@@ -146,10 +146,10 @@ object EasyPermissionHelper {
                         deniedListener: () -> Unit,
                         isRationale: Boolean = true,
                         isContact:Boolean=false,
-                        @PermissionConstants.Permission vararg permissions: String) {
-        PermissionUtils.permission(*permissions)
+                        @PermissionConstants.PermissionGroup vararg permissions: String) {
+        PermissionUtils.permissionGroup(*permissions)
                 //设置拒绝权限后再次请求的回调接口
-                .rationale { shouldRequest ->
+                .rationale { _,shouldRequest ->
                     if (isRationale) {
                         if (isContact){
                             DialogHelper.showRationaleDialog("为了更好的进行运营商服务，需向您申请通讯录权限", shouldRequest)

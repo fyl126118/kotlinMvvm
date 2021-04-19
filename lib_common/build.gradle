@@ -71,7 +71,7 @@ dependencies {
     }
     implementation rootProject.ext.dependencies["kotlin"]
     api project(':lib_basemvvm')
-    api(rootProject.ext.dependencies["cardview-v7"]) {
+    api(rootProject.ext.dependencies["cardview"]) {
         exclude module: 'support-annotations'
     }
     api rootProject.ext.dependencies["SmartRefreshLayout_core"]

@@ -2,6 +2,7 @@ package com.kotlin.web.mvvm.view
 
 import android.graphics.Bitmap
 import android.graphics.Color
+import android.net.Uri
 import android.net.http.SslError
 import android.view.View
 import android.webkit.*
@@ -77,7 +78,7 @@ class WebActivity : BaseActivity<WebActivityWebBinding, WebViewModel>(), Refresh
             }
 
             override fun onReceivedSslError(view: WebView?, handler: SslErrorHandler?, error: SslError?) {
-                handler?.proceed()
+                handler!!.proceed()
                 if (view?.url!!.contains(getBaseUrl())) {
                     //todo 暂时取消验证
                 } else {
@@ -96,8 +97,43 @@ class WebActivity : BaseActivity<WebActivityWebBinding, WebViewModel>(), Refresh
                 Timber.e(webUrl)
             }
         }
+        mBinding.wvLoad.webChromeClient = object : WebChromeClient() {
+            override fun onReceivedTitle(view: WebView?, title: String?) {
+                super.onReceivedTitle(view, title)
+                title?.let { mBinding.wvTitle.setTitle(it) }
+            }
 
+            override fun onProgressChanged(view: WebView?, newProgress: Int) {
+                super.onProgressChanged(view, newProgress)
+                if (newProgress > 80) {
+                    if (mBinding.progressBar.visibility === View.VISIBLE) {
+                        mBinding.progressBar.visibility = View.GONE
+                    }
+                } else {
+                    mBinding.progressBar.progress = newProgress
+                    if (mBinding.progressBar.visibility !== View.VISIBLE) {
+                        mBinding.progressBar.visibility = View.VISIBLE
+                    }
+                }
+            }
 
+            override fun onShowFileChooser(webView: WebView?, filePathCallback: ValueCallback<Array<Uri>>?, fileChooserParams: FileChooserParams?): Boolean {
+                return super.onShowFileChooser(webView, filePathCallback, fileChooserParams)
+            }
+
+            fun openFileChooser(uploadMsg: ValueCallback<Uri>, acceptType: String, capture: String) {
+
+            }
+
+            fun openFileChooser(uploadMsg: ValueCallback<Uri>, acceptType: String) {
+
+            }
+
+            fun openFileChooser(uploadMsg: ValueCallback<Uri>) {
+
+            }
+
+        }
     }
 
     override fun onItemClick(v: View, position: Int, item: WebItemViewModel) {

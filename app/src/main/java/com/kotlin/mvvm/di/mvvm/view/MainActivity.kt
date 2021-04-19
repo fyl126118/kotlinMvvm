@@ -1,15 +1,21 @@
 package com.kotlin.mvvm.di.mvvm.view
 
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.blankj.utilcode.constant.PermissionConstants
+import com.blankj.utilcode.util.LogUtils
+import com.blankj.utilcode.util.PermissionUtils
+import com.blankj.utilcode.util.ScreenUtils
 import com.fortunes.commonsdk.core.RouterConstants
 import com.fortunes.commonsdk.network.onHttpSubscribe
 import com.fortunes.commonsdk.network.onHttpSubscribeNoToast
 import com.fortunes.commonsdk.utils.NavigationUtils
+import com.fortunes.commonsdk.utils.perimission.EasyPermissionHelper
 import com.kotlin.basemvvm.base.BaseActivity
 import com.kotlin.basemvvm.helper.extens.bindDialogOrLifeCycle
 import com.kotlin.basemvvm.helper.extens.bindStatusOrLifeCycle
 import com.kotlin.basemvvm.helper.extens.toast
 import com.kotlin.basemvvm.helper.listener.RefreshPresenter
+import com.kotlin.basemvvm.widget.dialog.DialogHelper
 import com.kotlin.mine.mvvm.viewmodel.MineViewModel
 import com.kotlin.mvvm.R
 import com.kotlin.mvvm.databinding.ActivityMainBinding
@@ -18,16 +24,16 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 
 @Route(path = RouterConstants.MAIN_ACTIVITY)
-class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), RefreshPresenter{
+class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), RefreshPresenter {
 
     override fun loadData(isRefresh: Boolean) {
         mViewModel
                 .getArticle()
                 //  .bindDialogOrLifeCycle(this)
-                . bindStatusOrLifeCycle(isRefresh, viewModel = mViewModel, owner = this@MainActivity)
+                .bindStatusOrLifeCycle(isRefresh, viewModel = mViewModel, owner = this@MainActivity)
                 .onHttpSubscribeNoToast(this)
                 {
-                    toast("成功"+it.errorMsg)
+                    toast("成功" + it.errorMsg)
                 }
     }
 
@@ -52,11 +58,12 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), Refresh
     }
 
     override fun initData() {
-//        EasyPermissionHelper.requestAll(this,grantedListener = {
+//        EasyPermissionHelper.requestAll(this, grantedListener = {
 //
-//        },deniedListener = {
+//        }, deniedListener = {
 //
 //        })
     }
+
 }
 

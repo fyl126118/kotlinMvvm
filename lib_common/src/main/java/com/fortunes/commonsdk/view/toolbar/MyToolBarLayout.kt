@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
 import com.fortunes.commonsdk.R
 import com.fortunes.commonsdk.binds.bindRefreshing
 
@@ -36,7 +37,6 @@ class MyToolBarLayout(context: Context, attrs: AttributeSet?) : LinearLayout(con
         toolRight = array.getString(R.styleable.public_toolbar_public_toolbar_tv_right)
         iconVisible = array.getBoolean(R.styleable.public_toolbar_public_toolbar_img, true)
         array.recycle()
-
         val view = LayoutInflater.from(context).inflate(R.layout.public_layout_toolbar, this, false)
         addView(view, 0)
         ivBack = view.findViewById(R.id.public_iv_back)
