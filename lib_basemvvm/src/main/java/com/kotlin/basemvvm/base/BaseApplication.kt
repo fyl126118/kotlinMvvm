@@ -3,6 +3,7 @@ package com.kotlin.basemvvm.base
 import android.app.Application
 import android.content.Context
 import androidx.multidex.MultiDex
+import androidx.multidex.MultiDexApplication
 import com.kotlin.basemvvm.integration.AppDelegate
 import com.scwang.smart.refresh.footer.ClassicsFooter
 import com.scwang.smart.refresh.header.ClassicsHeader
@@ -22,7 +23,6 @@ abstract class BaseApplication : Application() {
         private var instance: Application? = null
         fun instance() = instance ?: throw Throwable("instance 还未初始化完成")
     }
-
     override fun attachBaseContext(base: Context) {
         super.attachBaseContext(base)
         MultiDex.install(this)

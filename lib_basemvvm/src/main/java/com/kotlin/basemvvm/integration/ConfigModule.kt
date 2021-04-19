@@ -2,6 +2,7 @@ package com.kotlin.basemvvm.integration
 
 import android.app.Application
 import android.content.Context
+import androidx.annotation.Keep
 import androidx.fragment.app.FragmentManager
 
 /***
@@ -19,7 +20,6 @@ import androidx.fragment.app.FragmentManager
  * Created by mou on 2018/8/20.
  * 框架整体的生命周期注入类
  */
-
 interface ConfigModule {
     /**
      * 使用[AppLifeCycles]在Application的生命周期中注入一些操作
