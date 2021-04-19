@@ -1,3 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">MvvmModulePatternSample</string>
+    <string name="public_app_name" tools:ignore="ResourceName">整体</string>
 </resources>

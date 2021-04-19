@@ -33,10 +33,10 @@ android {
     signingConfigs {
         File file = new File('mvvm.jks')
         debug {
-            keyAlias 'key'
-            keyPassword '123456'
-            storeFile file
-            storePassword '123456'
+//            keyAlias 'key'
+//            keyPassword '123456'
+//            storeFile file
+//            storePassword '123456'
         }
         release {
             keyAlias 'key'

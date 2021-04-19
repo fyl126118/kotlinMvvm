@@ -220,9 +220,10 @@
 # Gson
 -keep class com.google.gson.stream.** { *; }
 -keepattributes EnclosingMethod
-# Gson
--keep class com.kotlin.mvvm.di.mvvm.bean.**{*;} # 自定义数据模型的bean目录
 #-------------------------------网络添加混淆-------------------------
 -keep class com.kotlin.basemvvm.network.** {*;}
 -keep class com.fortunes.commonsdk.network.provider.** {*;}
 -keep class com.fortunes.commonsdk.network.bean.**{*;}
+
+-keep class com.kotlin.mvvm.di.mvvm.bean.**{*;}
+-keep class com.kotlin.mine.mvvm.bean.**{*;}

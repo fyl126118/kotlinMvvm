@@ -16,11 +16,9 @@ import com.kotlin.basemvvm.helper.extens.bindStatusOrLifeCycle
 import com.kotlin.basemvvm.helper.extens.toast
 import com.kotlin.basemvvm.helper.listener.RefreshPresenter
 import com.kotlin.basemvvm.widget.dialog.DialogHelper
-import com.kotlin.mine.mvvm.viewmodel.MineViewModel
 import com.kotlin.mvvm.R
 import com.kotlin.mvvm.databinding.ActivityMainBinding
 import com.kotlin.mvvm.di.mvvm.viewmodel.MainViewModel
-import kotlinx.android.synthetic.main.activity_main.*
 
 
 @Route(path = RouterConstants.MAIN_ACTIVITY)
