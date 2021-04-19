@@ -27,7 +27,7 @@ class MainViewModel : BaseVMModel<MainModel>() {
                     link.set(it.data.datas[0].link)
                 }
                 .doOnError {
-                    Timber.d("doOnError")
+                    Timber.d(it.message)
                     //页面状
                     if (it is UnknownHostException || it is ConnectException) {
                         pageState.set(PageStateType.NOWORK)
