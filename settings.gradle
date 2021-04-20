@@ -1,1 +1,7 @@
-include ':app', ':lib_basemvvm', ':lib_common', ':module_login', ':module_mine', ':module_web'
+include ':app',
+        ':lib_basemvvm',
+        ':lib_common',
+        ':module_login',
+        ':module_mine',
+        ':module_web',
+        ':module_home'

@@ -224,6 +224,6 @@
 -keep class com.kotlin.basemvvm.network.** {*;}
 -keep class com.fortunes.commonsdk.network.provider.** {*;}
 -keep class com.fortunes.commonsdk.network.bean.**{*;}
-
 -keep class com.kotlin.mvvm.di.mvvm.bean.**{*;}
 -keep class com.kotlin.mine.mvvm.bean.**{*;}
+-keep class com.kotlin.home.mvvm.bean.**{*;}

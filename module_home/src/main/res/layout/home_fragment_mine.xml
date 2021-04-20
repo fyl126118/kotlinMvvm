@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="refreshPresenter"
+            type="com.kotlin.basemvvm.helper.listener.RefreshPresenter" />
+
+        <variable
+            name="homeBean"
+            type="com.kotlin.home.mvvm.viewmodel.HomeViewModel" />
+    </data>
+
+    <com.fortunes.commonsdk.view.statusview.MultipleStatusView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        bind:onError="@{refreshPresenter}"
+        bind:status="@{homeBean.pageState}">
+
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            bind:onRefresh="@{refreshPresenter}"
+            bind:refreshing="@{homeBean.listState}">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <com.scwang.smart.refresh.footer.ClassicsFooter
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srlClassicsSpinnerStyle="Translate"
+                app:srlDrawableArrowSize="20dp"
+                app:srlDrawableMarginRight="20dp"
+                app:srlDrawableProgressSize="20dp"
+                app:srlDrawableSize="20dp"
+                app:srlFinishDuration="500"
+                app:srlTextFailed="@string/srl_footer_failed"
+                app:srlTextFinish="@string/srl_footer_finish"
+                app:srlTextLoading="@string/srl_footer_loading"
+                app:srlTextNothing="我是你打野"
+                app:srlTextPulling="@string/srl_footer_pulling"
+                app:srlTextRefreshing="@string/srl_footer_refreshing"
+                app:srlTextRelease="@string/srl_footer_release"
+                app:srlTextSizeTitle="16sp" />
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+    </com.fortunes.commonsdk.view.statusview.MultipleStatusView>
+
+</layout>

@@ -38,8 +38,8 @@ object NavigationUtils {
     /**
      * 去往首页
      */
-    fun goMainActivity() {
-        ARouter.getInstance().build(RouterConstants.MAIN_ACTIVITY).navigation()
+    fun goHomeActivity() {
+        ARouter.getInstance().build(RouterConstants.HOME_ACTIVITY).navigation()
     }
 
     /**

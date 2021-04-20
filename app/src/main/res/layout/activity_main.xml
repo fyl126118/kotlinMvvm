@@ -14,7 +14,7 @@
 			android:layout_height="match_parent"
 			android:orientation="vertical"
 			app:public_toolbar_img="false"
-			app:public_toolbar_title="首页">
+			app:public_toolbar_title="功能">
 
 		<com.fortunes.commonsdk.view.statusview.MultipleStatusView
 			android:layout_width="match_parent"
@@ -42,7 +42,11 @@
 					android:text="去个人中心"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"/>
-
+				<Button
+					android:id="@+id/btn_home"
+					android:text="首页"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"/>
 				<TextView
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content" />

@@ -64,6 +64,10 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), Refresh
         mBinding.btnMine.setOnClickListener {
             NavigationUtils.goMineActivity()
         }
+
+        mBinding.btnHome.setOnClickListener {
+            NavigationUtils.goHomeActivity()
+        }
     }
 
     override fun initData() {

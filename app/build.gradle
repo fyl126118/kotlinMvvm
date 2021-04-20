@@ -35,5 +35,6 @@ dependencies {
         implementation project(':module_login')
         implementation project(':module_mine')
         implementation project(':module_web')
+        implementation project(':module_home')
     }
 }

@@ -23,14 +23,15 @@ package com.fortunes.commonsdk.core
  * Created by mou on 2018/9/13.
  */
 object RouterConstants {
-    private const val HOME = "/home"
+    private const val MAIN = "/main"
     private const val LOGIN = "/login"
     private const val MINE = "/mine"
     private const val WEB = "/web"
+    private const val HOME="/home"
     /**
      * 主界面
      */
-    const val MAIN_ACTIVITY = "$HOME/MainActivity"
+    const val MAIN_ACTIVITY = "$MAIN/MainActivity"
     /**
      * 登录
      */
@@ -44,4 +45,8 @@ object RouterConstants {
      * 个人中心
      */
     const val MINE_ACTIVITY = "$MINE/MineActivity"
+    /**
+     * 首页
+     */
+    const val HOME_ACTIVITY = "$HOME/HomeActivity"
 }
