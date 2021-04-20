@@ -53,8 +53,13 @@ class MyToolBarLayout(context: Context, attrs: AttributeSet?) : LinearLayout(con
 
     }
 
-    fun setOnRightClickListner(click: (() -> Unit)? = null) {
+    fun setOnRightClickListener(click: (() -> Unit)? = null) {
         rlRight.setOnClickListener {
+            click?.invoke()
+        }
+    }
+    fun setOnLeftClickListener(click: (() -> Unit)? = null) {
+        rlBack.setOnClickListener {
             click?.invoke()
         }
     }

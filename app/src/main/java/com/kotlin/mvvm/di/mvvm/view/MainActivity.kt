@@ -2,14 +2,15 @@ package com.kotlin.mvvm.di.mvvm.view
 
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.blankj.utilcode.constant.PermissionConstants
-import com.blankj.utilcode.util.LogUtils
-import com.blankj.utilcode.util.PermissionUtils
-import com.blankj.utilcode.util.ScreenUtils
+import com.blankj.utilcode.util.*
+import com.fortunes.commonsdk.bean.UserInfoBean
 import com.fortunes.commonsdk.core.RouterConstants
 import com.fortunes.commonsdk.network.onHttpSubscribe
 import com.fortunes.commonsdk.network.onHttpSubscribeNoToast
 import com.fortunes.commonsdk.utils.NavigationUtils
 import com.fortunes.commonsdk.utils.perimission.EasyPermissionHelper
+import com.fortunes.commonsdk.utils.sp.EasySharedPreferences
+import com.fortunes.commonsdk.utils.sp.PreferenceSupport
 import com.kotlin.basemvvm.base.BaseActivity
 import com.kotlin.basemvvm.helper.extens.bindDialogOrLifeCycle
 import com.kotlin.basemvvm.helper.extens.bindStatusOrLifeCycle
@@ -31,8 +32,18 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), Refresh
                 .bindStatusOrLifeCycle(isRefresh, viewModel = mViewModel, owner = this@MainActivity)
                 .onHttpSubscribeNoToast(this)
                 {
+//                    var userInfoBean = UserInfoBean("16666666", "王菲")
+//                    EasySharedPreferences.
+//                    SPUtils.getInstance("userinfo").put("mobile",userInfoBean.mobile)
+//                    SPUtils.getInstance().put("userinfo",userInfoBean.name)
+                    val user = EasySharedPreferences.load(UserInfoBean::class.java)
+                    user.mobile="888888888"
+                    user.name="w99999"
+                    user.apply()
                     toast("成功" + it.errorMsg)
                 }
+
+
     }
 
     override fun providerVMClass() = MainViewModel::class.java

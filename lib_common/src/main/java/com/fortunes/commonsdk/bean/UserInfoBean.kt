@@ -1,6 +1,8 @@
 package com.fortunes.commonsdk.bean
 
 import android.os.Parcelable
+import com.fortunes.commonsdk.utils.sp.PreferenceRename
+import com.fortunes.commonsdk.utils.sp.PreferenceSupport
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
@@ -10,9 +12,9 @@ import kotlinx.android.parcel.Parcelize
  * @description:  统一查询个人信息 common/userInfo/queryUserInfo
  * @parameter:
  */
-@Parcelize
-data class UserInfoBean(
-        @SerializedName("mobile") val mobile: String = "",
-        @SerializedName("name") val name: String = ""
-) : Parcelable
+@PreferenceRename(("user_info"))
+class UserInfoBean: PreferenceSupport(){
+    var mobile: String = ""
+    var name: String = ""
+}
 

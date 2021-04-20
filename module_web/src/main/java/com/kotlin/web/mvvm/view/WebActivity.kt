@@ -9,10 +9,12 @@ import android.webkit.*
 import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
+import com.fortunes.commonsdk.bean.UserInfoBean
 import com.fortunes.commonsdk.core.RouterConstants
 import com.fortunes.commonsdk.network.HttpUrlConstants.getBaseUrl
 import com.fortunes.commonsdk.network.onHttpSubscribeNoToast
 import com.fortunes.commonsdk.utils.NavigationUtils
+import com.fortunes.commonsdk.utils.sp.EasySharedPreferences
 import com.guoyang.recyclerviewbindingadapter.ItemClickPresenter
 import com.guoyang.recyclerviewbindingadapter.adapter.SingleTypeAdapter
 import com.kotlin.basemvvm.base.BaseActivity
@@ -54,7 +56,6 @@ class WebActivity : BaseActivity<WebActivityWebBinding, WebViewModel>(), Refresh
                 .apply { this.itemPresenter = this@WebActivity }
     }
 
-
     override fun initView() {
         ARouter.getInstance().inject(this@WebActivity)
         mBinding.apply {
@@ -69,6 +70,17 @@ class WebActivity : BaseActivity<WebActivityWebBinding, WebViewModel>(), Refresh
                 .setGradientColor(Color.parseColor("#D73411"), Color.parseColor("#70A4CD"))
                 .build()
         mBinding.tvPay.background = drawable
+//        var moblie = SPUtils.getInstance("userinfo").getString("mobile")
+//        var name = SPUtils.getInstance("userinfo").getString("name")
+        var user = EasySharedPreferences.load(UserInfoBean::class.java)
+        mBinding.wvTitle.setTitle(user.mobile)
+        mBinding.wvTitle.setOnLeftClickListener {
+            user.name=""
+            user.mobile=""
+            user.apply()
+            finish()
+        }
+
         mBinding.wvLoad.loadUrl(webUrl)
         mBinding.wvLoad.webViewClient = object : WebViewClient() {
 
@@ -100,7 +112,7 @@ class WebActivity : BaseActivity<WebActivityWebBinding, WebViewModel>(), Refresh
         mBinding.wvLoad.webChromeClient = object : WebChromeClient() {
             override fun onReceivedTitle(view: WebView?, title: String?) {
                 super.onReceivedTitle(view, title)
-                title?.let { mBinding.wvTitle.setTitle(it) }
+                // title?.let { mBinding.wvTitle.setTitle(it) }
             }
 
             override fun onProgressChanged(view: WebView?, newProgress: Int) {
