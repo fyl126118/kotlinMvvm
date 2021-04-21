@@ -1,5 +1,6 @@
 package com.kotlin.home.core
 
+import com.blankj.utilcode.util.Utils
 import com.kotlin.basemvvm.base.BaseApplication
 
 /***
@@ -8,5 +9,8 @@ import com.kotlin.basemvvm.base.BaseApplication
  **/
 
 class App : BaseApplication() {
-
+    override fun onCreate() {
+        super.onCreate()
+        Utils.init(this)
+    }
 }

@@ -1,17 +1,25 @@
 package com.kotlin.home.mvvm.adapter
 
-import android.content.Context
-import android.view.ViewGroup
-import androidx.databinding.ViewDataBinding
-import com.guoyang.recyclerviewbindingadapter.adapter.BindingViewHolder
-import com.guoyang.recyclerviewbindingadapter.adapter.SingleTypeAdapter
-import com.guoyang.recyclerviewbindingadapter.observable.ObservableAdapterList
-import com.kotlin.home.mvvm.bean.HomeBean
+import com.chad.library.adapter.base.BaseQuickAdapter
+import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
+import com.kotlin.home.R
+import com.kotlin.home.databinding.HomeItemBinding
+import com.kotlin.home.mvvm.bean.SubData
 
-class HomeAdapter(context: Context, layoutRes: Int, list: ObservableAdapterList<HomeBean>) : SingleTypeAdapter<HomeBean>(context, layoutRes, list) {
+class HomeAdapter : BaseQuickAdapter<SubData, BaseDataBindingHolder<HomeItemBinding>>(R.layout.home_item) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BindingViewHolder<ViewDataBinding> {
-        return super.onCreateViewHolder(parent, viewType)
+    private val mPresenter = HomePresenter()
 
+    override fun convert(holder: BaseDataBindingHolder<HomeItemBinding>, item: SubData) {
+        if (item == null) {
+            return
+        }
+        // 获取 Binding
+        val binding = holder.dataBinding
+        if (binding != null) {
+            binding.item = item
+            binding.presenter = mPresenter
+            binding.executePendingBindings()
+        }
     }
 }

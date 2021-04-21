@@ -6,11 +6,11 @@
 
         <variable
             name="presenter"
-            type="com.guoyang.recyclerviewbindingadapter.ItemClickPresenter"/>
+            type="com.kotlin.home.mvvm.adapter.HomePresenter"/>
 
         <variable
             name="item"
-            type="com.kotlin.home.mvvm.viewmodel.HomeItemViewModel"/>
+            type="com.kotlin.home.mvvm.bean.SubData"/>
 
         <variable
             name="position"
@@ -23,7 +23,7 @@
         android:paddingTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="@{(v)->presenter.onItemClick(v,position,item)}"
+        android:onClick="@{(v)->presenter.buyTicket(v,item)}"
         android:orientation="vertical"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
@@ -31,6 +31,7 @@
         android:gravity="center">
 
         <TextView
+            android:id="@+id/tv_chapterName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{item.chapterName}"

@@ -21,30 +21,19 @@ import io.reactivex.Single
 class HomeViewModel : BaseVMModel<HomeModel>() {
     override var mModel: HomeModel = HomeModel()
     private var page = 1
-    private var page1=1
-    val observableList = ObservableAdapterList<HomeItemViewModel>()
-    val observableList1 = ObservableAdapterList<HomeItemViewModel>()
+    private var page1 = 1
 
     fun getProjectList(isRefresh: Boolean, cid: Int): Single<BaseBean<HomeBean>> {
         return mModel.getProjectList(
-                        if (isRefresh) {
-                            page = 1
-                            page
-                        } else page, cid
-                )
+                if (isRefresh) {
+                    page = 1
+                    page
+                } else page, cid
+        )
                 .async()
-                .doOnSuccess {
+                .doOnSuccess{
                     if (it.data.datas.isNotEmpty()) {
-                        val list = mutableListOf<HomeItemViewModel>()
-                        it.data.datas.forEach { orderBean: SubData ->
-                            list.add(HomeItemViewModel(orderBean))
-                        }
                         page++
-                        if (isRefresh) {
-                            observableList.setNewData(list)
-                        } else {
-                            observableList.addAll(list)
-                        }
                     } else {
                         throw EmptyException()
                     }
@@ -61,30 +50,10 @@ class HomeViewModel : BaseVMModel<HomeModel>() {
                 .async()
                 .doOnSuccess {
                     if (it.data.datas.isNotEmpty()) {
-                        val list = mutableListOf<HomeItemViewModel>()
-                        it.data.datas.forEach { orderBean: SubData ->
-                            list.add(HomeItemViewModel(orderBean))
-                        }
-                        page1++
-                        if (isRefresh) {
-                            observableList1.setNewData(list)
-                        } else {
-                            observableList1.addAll(list)
-                        }
+                        page++
                     } else {
                         throw EmptyException()
                     }
                 }
-    }
-}
-
-class HomeItemViewModel(bean: SubData) {
-    val chapterName = ObservableItemField<String>()
-    val desc = ObservableItemField<String>()
-    val data = bean
-
-    init {
-        chapterName.set(bean.chapterName)
-        desc.set(bean.desc)
     }
 }

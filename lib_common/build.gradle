@@ -79,6 +79,7 @@ dependencies {
     api rootProject.ext.dependencies["FlycoTabLayout"]
     api rootProject.ext.dependencies["immersionbar"]
     api rootProject.ext.dependencies["RecyclerViewBindingAdapter"]
+    api rootProject.ext.dependencies["BaseQuickAdapter"]
     api rootProject.ext.dependencies["PickerView"]
     api(rootProject.ext.dependencies["pictureSelector"]) {
         exclude module: 'glide'
