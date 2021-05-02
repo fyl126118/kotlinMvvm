@@ -23,9 +23,9 @@ class LoginActivity : BaseActivity<LoginActivityLoginBinding, LoginViewModel>() 
     override fun getLayoutId() = R.layout.login_activity_login
 
     override fun initView() {
-//        mBinding.btLogin.setOnClickListener {
-//            NavigationUtils.goWebActivity("https://www.baidu.com", "百度")
-//        }
+        mBinding.btLogin.setOnClickListener {
+            NavigationUtils.goWebActivity("https://www.baidu.com", "百度")
+        }
     }
 
     override fun initData() {
