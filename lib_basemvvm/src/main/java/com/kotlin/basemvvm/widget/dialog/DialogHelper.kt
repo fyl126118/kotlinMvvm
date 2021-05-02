@@ -12,7 +12,7 @@ package com.kotlin.basemvvm.widget.dialog
 import androidx.appcompat.app.AlertDialog
 import com.blankj.utilcode.util.ActivityUtils
 import com.blankj.utilcode.util.PermissionUtils
-import com.kotlin.easymvvm.R
+import com.kotlin.basemvvm.R
 
 /***
  *

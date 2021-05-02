@@ -10,7 +10,8 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.fortunes.commonsdk.R
-import com.gyf.barlibrary.ImmersionBar
+import com.gyf.immersionbar.ImmersionBar
+
 import timber.log.Timber
 
 /***
@@ -81,6 +82,6 @@ import timber.log.Timber
     }
 
     override fun onActivityDestroyed(activity: Activity) {
-        ImmersionBar.with(activity).destroy()
+      //  ImmersionBar.with(activity).destroy()
     }
 }

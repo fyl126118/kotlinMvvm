@@ -4,7 +4,7 @@ import android.content.Context
 import com.google.gson.JsonParseException
 import com.kotlin.basemvvm.helper.extens.toast
 import com.kotlin.basemvvm.helper.network.ApiException
-import com.kotlin.easymvvm.BuildConfig
+import com.kotlin.basemvvm.BuildConfig
 import com.uber.autodispose.SingleSubscribeProxy
 import org.json.JSONException
 import java.net.ConnectException

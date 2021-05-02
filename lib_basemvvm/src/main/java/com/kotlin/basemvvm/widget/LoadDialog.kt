@@ -5,7 +5,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.widget.TextView
 import com.kotlin.basemvvm.widget.dialog.CommonDialog
-import com.kotlin.easymvvm.R
+import com.kotlin.basemvvm.R
 
 /***
  * You may think you know what the following code does.

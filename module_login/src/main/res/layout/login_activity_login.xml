@@ -1,27 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-		xmlns:android="http://schemas.android.com/apk/res/android"
-		xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-	<data/>
-	<com.fortunes.commonsdk.view.toolbar.MyToolBarLayout
-			app:public_toolbar_title="登录"
-			android:orientation="vertical"
-			android:layout_width="match_parent"
-			android:layout_height="match_parent">
-		<EditText
-				android:layout_marginTop="100dp"
-				android:layout_width="match_parent"
-				android:hint="请输入账号"
-				android:layout_height="wrap_content"/>
-		<EditText
-				android:layout_width="match_parent"
-				android:hint="请输入密码"
-				android:layout_height="wrap_content"/>
-		<Button
-			android:id="@+id/bt_login"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:text="登录"/>
-	</com.fortunes.commonsdk.view.toolbar.MyToolBarLayout>
+    <data />
+
+
+    <com.fortunes.commonsdk.view.toolbar.MyToolBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:public_toolbar_title="登录">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_phone"
+            style="@style/Widget.Design.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintEnabled="false"
+            app:prefixText="+52 | "
+            app:endIconMode="clear_text"
+            app:errorTextColor="@color/picture_color_fa632d"
+            app:endIconTint="@color/picture_color_fa632d"
+            app:layout_goneMarginTop="21dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_login_fragment_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入手机号"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:textColor="#ff333333"
+                android:textSize="18sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入密码"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/bt_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="登录"
+
+            tools:ignore="MissingConstraints" />
+    </com.fortunes.commonsdk.view.toolbar.MyToolBarLayout>
 </layout>

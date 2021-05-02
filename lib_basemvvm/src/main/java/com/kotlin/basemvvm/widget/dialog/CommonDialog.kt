@@ -7,7 +7,7 @@ import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
 
-import com.kotlin.easymvvm.R
+import com.kotlin.basemvvm.R
 
 
 /**

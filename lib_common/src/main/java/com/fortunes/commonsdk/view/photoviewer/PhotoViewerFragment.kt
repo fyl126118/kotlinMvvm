@@ -116,7 +116,7 @@ class PhotoViewerFragment : BaseLazyFragment() {
 
         root.isFocusableInTouchMode = true
         root.requestFocus()
-        root.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
+        root.setOnKeyListener(View.OnKeyListener { _, keyCode, _ ->
             if (keyCode == KeyEvent.KEYCODE_BACK) {
 
                 mIv.exit()
